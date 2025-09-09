@@ -1,0 +1,167 @@
+/* General Body and Font Styles */
+body {
+  font-family: 'Roboto', Arial, sans-serif;
+  background-color: #fafafa;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto', Arial, sans-serif;
+  color: #333;
+}
+
+/* Cursor Follower */
+.cursor-follower {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #39b54a;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s, height 0.3s, opacity 0.4s, transform 0.3s;
+  box-shadow: 0 0 15px rgba(57, 181, 74, 0.8), 0 0 25px rgba(57, 181, 74, 0.6), 0 0 35px rgba(57, 181, 74, 0.4);
+}
+
+.cursor-follower.hidden {
+  opacity: 0;
+}
+
+/* Container */
+.container {
+  max-width: 85%;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* Flex Layout */
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 20px 0;
+}
+
+/* Profile Section */
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-picture {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 3px solid #39b54a;
+  overflow: hidden;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.profile-picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.name, .username {
+  margin-top: 10px;
+}
+
+/* Buttons Section */
+.buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.button {
+  display: inline-block;
+  width: 180px;
+  padding: 14px 20px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 30px;
+  text-align: center;
+  transition: background-color 0.3s, transform 0.2s ease-in-out;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.button:hover {
+  background-color: #0056b3;
+  transform: translateY(-3px);
+}
+
+/* Tagline */
+.tagline {
+  color: #777;
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+/* Upload Form */
+.upload-form input[type="text"], .upload-form input[type="file"] {
+  padding: 12px;
+  margin: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  width: 250px;
+}
+
+.upload-form button {
+  width: 120px;
+  height: 50px;
+  background-color: blue;
+  color: white;
+  border-radius: 10px;
+}
+
+.upload-form button:hover {
+  background-color: #0056b3;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.patta {
+  width: calc(33.33% - 20px);
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-img-top {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0;
+  color: #333;
+  text-align: center;
+}

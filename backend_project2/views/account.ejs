@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Profile</title>
+  <link rel="stylesheet" href="/stylesheets/account.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="cursor-follower" style="width: 8px; height: 8px;"></div>
+
+  <script>
+    const cursorFollower = document.querySelector('.cursor-follower');
+
+    document.addEventListener('mousemove', (e) => {
+        const { clientX, clientY } = e;
+        const mouseX = clientX - cursorFollower.clientWidth / 2;
+        const mouseY = clientY - cursorFollower.clientHeight / 2;
+        cursorFollower.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
+    });
+
+    document.addEventListener('mouseover', (e) => {
+        cursorFollower.classList.remove('hidden');
+    });
+
+    document.addEventListener('mouseout', (e) => {
+        cursorFollower.classList.add('hidden');
+    });
+  </script>
+
+  <div class="container" style="height: auto;">
+    <div class="card">
+      <!-- Profile Section -->
+      <div class="d-flex justify-content-between align-items-center">
+        <!-- Left: Profile Info -->
+        <div class="profile-info">
+          <div class="profile-picture">
+            <img src="https://media.licdn.com/dms/image/C4D12AQGGhLjSGwwZlw/article-cover_image-shrink_600_2000/0/1601205955175?e=2147483647&v=beta&t=BPIUJdgnIoxjgMBJOv_Fc0MMRUNoB8gamPwNQg6ILPo" alt="Profile Picture">
+          </div>
+          <h2 class="name text-center" style="font-weight: 600; text-transform: capitalize;"> <%= user.fullName %> </h2>
+          <h3 class="username text-center" style="color: rgb(71, 71, 71); font-weight: light;"> @<%= user.username %> </h3>
+        </div>
+
+        <!-- Right: Action Buttons -->
+        <div class="buttons d-flex flex-column align-items-end">
+          <a href="/profile" class="button mb-2" style="background-color: rgb(43, 31, 151);">Main Menu</a>
+          <a href="/logout" class="button mb-2" style="background-color: red;">Logout</a>
+          <a href="/upload" class="button mb-2" style="background-color: green;">Upload</a>
+        </div>
+      </div>
+
+      <!-- Tagline -->
+      <p class="tagline text-center" style="color: rgb(136, 136, 136); font-size: 16px;">
+        Elevating The Weekly Santhe Experience by Connecting Farmers and Consumers Through Innovative Technology and Seamless User Experience
+      </p>
+
+      <!-- Upload Form -->
+      <div class="upload-form text-center">
+        <form action="/upload" method="post" enctype="multipart/form-data" id="ffo">
+          <input type="text" name="filecaption" placeholder="Write Some Caption" style="width: 250px; margin-bottom: 10px; border-radius: 5px;">
+          <input type="file" name="file" style="margin-bottom: 10px;">
+          <button type="submit" style="width: 120px; height: 50px; background-color: blue; color: white; border-radius: 10px;">Upload</button>
+        </form>
+      </div>
+
+      <a href="/feed" style="display: block; text-align: center; background-color: goldenrod; color: white; padding: 10px; border-radius: 6px;">Go To Feed</a>
+    </div>
+  </div>
+
+  <div class="card mt-4">
+    <div class="cards flex">
+      <% user.posts.reverse().forEach(function(post){ %>
+        <div class="patta">
+          <img src="/images/uploads/<%= post.image %>" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">
+              <%= post.imageText %>
+            </h5>
+          </div>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+
+</html>
