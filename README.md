@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # AgriConnect: Where Farmers Meet Experts & Technology for a Greener Future! 🌾
 ![Alt Text](frontend/src/assets/LoginPage.jpeg)
 
@@ -178,3 +179,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **Best use of MongoDb Atlas**
 - **Best first time hackers**
 
+=======
+# Shivam_Agriconnect
+>>>>>>> e8c8588653e673dc123dfc28d41be753e4ff7337
